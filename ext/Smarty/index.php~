@@ -1,0 +1,13 @@
+<?php
+	
+	include "./Smarty/Smarty.class.php";
+	
+	$smarty = new Smarty;
+	$meno = "Karel Kryl";
+	
+	$smarty->assign('meno', $meno);
+	if ($smarty){
+		echo "Smarty";	
+	}	
+	//$smarty->display("index.tpl");
+?>

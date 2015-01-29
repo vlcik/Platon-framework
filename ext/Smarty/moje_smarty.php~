@@ -1,0 +1,27 @@
+<?php
+
+	require 'Smarty.class.php';
+	
+	class MojeSmarty extends Smarty {
+
+
+
+  		public function __construct(){
+
+    		$this->Smarty();
+
+    		$this->template_dir = '../templates/';
+
+    		$this->config_dir = '../configs/';
+
+    		$this->compile_dir = '../templates_c/';
+
+    		$this->cache_dir = '../cache/';
+
+  		}
+
+  
+
+	}
+
+?>

@@ -1,0 +1,17 @@
+/* #status_flash { position: fixed; bottom: 10px; right: 0px; width: 350px; padding:15px 20px 20px 20px; margin:0 10px 0 0; z-index: 1000; background-color: #569; color: white; } */
+ #status_flash {-moz-border-radius:6px; -webkit-border-radius: 6px; border-radius: 6px; position: fixed; bottom:0; right:0; /*top:200px; left:50%;*/   width: 350px; padding:15px 20px 20px 20px; margin:0 0 0 -175px; z-index: 1000; background-color: #569; color: white; border:5px solid #FFF; } 
+    #status_flash, #status_flash * { cursor: pointer; }
+    #status_flash .yui-b { padding: 0px 0; }
+    #status_flash .yui-b>* { font-size: 128%; line-height:1.3em; }
+    #status_flash label { display: block; text-align: left !important; margin-bottom:10px; font-weight: bold; text-transform: capitalize !important; }
+    #status_flash label:after { content: ':'; }
+
+    #status_flash.subtle { background-color: #444; color: white; }
+    #status_flash.subtle:hover { background-color: #222; }
+    #status_flash.warning { background-color: #ff0; color: black; }
+    #status_flash.warning:hover { background-color: #ff8; }
+    #status_flash.success { background-color: #595; }
+    #status_flash.success:hover { background-color: #7b7; }
+    #status_flash.failure, #status_flash.error { background-color: #800; }
+    #status_flash.failure:hover, #status_flash.error:hover { background-color: #a00; }
+    #status_flash.subtle, #status_flash.success, #status_flash.failure, #status_flash.error { text-shadow: black 2px 2px 2px; }

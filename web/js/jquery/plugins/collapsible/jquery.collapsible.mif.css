@@ -1,0 +1,16 @@
+.collapsible-trigger{
+cursor:pointer; 
+color:#0034ff; 
+font-size:1.1em; 
+margin-top:-2px;
+padding:4px 0 4px 15px; 
+background-repeat:no-repeat; 
+background-position:0 8px;
+}
+.collapsible-body{display:none; margin:0;}
+.collapsible-up{background-image:url(../../../../img/design/arrow_blue_tri_up.gif);}
+.collapsible-down{background-image:url(../../../../img/design/arrow_blue_tri_down.gif);}
+.collapsible-up-red-right{background-image:url(../../../../img/design/arrow_tri_up.gif); background-position: right 9px;}
+.collapsible-down-red-right{background-image:url(../../../../img/design/arrow_tri_down.gif); background-position: right 9px;}
+
+

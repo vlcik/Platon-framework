@@ -1,0 +1,169 @@
+/*
+classy pre taby: 
+.tabs-bottom 
+.tabs-red-on-gray - toto je zaroven bottom
+.tabs-red-on-white - toto je zaroven bottom
+*/
+
+.ui-wrapper { border: 1px solid #50A029; }
+.ui-wrapper input, .ui-wrapper textarea { border: 0; }
+
+/* Caution! Ensure accessibility in print and other media types... */
+@media projection, screen { /* Use class for showing/hiding tab content, so that visibility can be better controlled in different media types... */
+    .ui-tabs-hide {
+        display: none;
+    }
+}
+
+/* Hide useless elements in print layouts... */
+@media print {
+    .ui-tabs-nav {
+        display: none;
+    }
+}
+
+/* common (+ default: tabs hore) */
+.ui-tabs-nav{
+
+}
+.ui-tabs-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 0px;
+}
+.ui-tabs-nav:after { /* clearing without presentational markup, IE gets extra treatment */
+    display: block;
+    clear: both;
+    content: " ";
+}
+.ui-tabs-nav li {
+    float: left;
+    margin: 0 3px -1px 0; /* resp. 0 3 0 0*/
+    font-weight: normal;
+	background:none;
+	padding-left:0;
+	font-size:1.1em;
+}
+.ui-tabs-nav a, .ui-tabs-nav a span {
+    float: left; /* fixes dir=ltr problem and other quirks IE */
+    padding: 0 12px;
+    background: url(i/tabs.gif) no-repeat;
+}
+.ui-tabs-nav a {
+    margin: 5px 0 0; /* position: relative makes opacity fail for disabled tab in IE */
+    padding-left: 0;
+    background-position: 100% 0;
+    text-decoration: none !important;
+    white-space: nowrap; /* @ IE 6 */
+    outline: 0; /* @ Firefox, prevent dotted border after click */    
+}
+.ui-tabs-nav a:link, .ui-tabs-nav a:visited {
+    color: #686869;
+}
+.ui-tabs-nav .ui-tabs-selected a, .ui-tabs-nav a:hover, .ui-tabs-nav a:focus, .ui-tabs-nav a:active  {
+    position: relative;
+    z-index: 2;
+	
+	/*
+	causes 5px jumps in 2tab only one selected, one hover situation
+	top: 5px;
+    margin-top: 0;
+	*/
+	
+	/* added by jan - FIX for 2tab only hover => no tab is normal (selected and hover) it causes 5px jump
+		BUT it did not work in IE6
+	*/
+	/* margin-bottom: 5px; */ 
+	
+    background-position: 100% -29px;
+	color:#000;
+}
+.ui-tabs-nav a span {
+    padding-top: 1px;
+    padding-right: 0;
+    height: 28px;
+    background-position: 0 0;
+    line-height: 28px;	
+}
+.ui-tabs-nav .ui-tabs-selected a span, .ui-tabs-nav a:hover span, .ui-tabs-nav a:focus span, .ui-tabs-nav a:active span  {
+    padding-top: 0;
+    height: 30px;  
+    background-position: 0 -29px;
+    line-height: 30px;
+}
+.ui-tabs-nav .ui-tabs-selected a:link, .ui-tabs-nav .ui-tabs-selected a:visited,
+.ui-tabs-nav .ui-tabs-disabled a:link, .ui-tabs-nav .ui-tabs-disabled a:visited { /* @ Opera, use pseudo classes otherwise it confuses cursor... */
+    cursor: text;
+}
+.ui-tabs-nav a:hover, .ui-tabs-nav a:focus, .ui-tabs-nav a:active,
+.ui-tabs-nav .ui-tabs-unselect a:hover, .ui-tabs-nav .ui-tabs-unselect a:focus, .ui-tabs-nav .ui-tabs-unselect a:active { /* @ Opera, we need to be explicit again here now... */
+    cursor: pointer;
+}
+.ui-tabs-disabled {
+    opacity: .4;
+    filter: alpha(opacity=40);
+}
+.ui-tabs-nav .ui-tabs-disabled a:link, .ui-tabs-nav .ui-tabs-disabled a:visited {
+    color: #000;
+}
+.ui-tabs-panel {
+    border-top: 1px solid #add599;
+    padding: 0;
+    background: #fff; /* declare background color for container to avoid distorted fonts in IE while fading */
+}
+/*.ui-tabs-loading em {
+    padding: 0 0 0 20px;
+    background: url(loading.gif) no-repeat 0 50%;
+}*/
+
+
+/* TABS BOTTOM */
+
+.tabs-bottom .ui-tabs-nav a, .tabs-bottom .ui-tabs-nav a span {
+    background: url(i/tabs-bottom.gif) no-repeat;
+}
+.tabs-bottom .ui-tabs-panel {
+	border-top:0;
+    border-bottom: 1px solid #add599;
+    padding: 0px;
+    background: none; /* declare background color for container to avoid distorted fonts in IE while fading */
+}
+.tabs-bottom .ui-tabs-nav a {
+    margin: 0 0 5px 0; /* position: relative makes opacity fail for disabled tab in IE */
+	background-position: 100% 0;
+}
+.tabs-bottom .ui-tabs-nav .ui-tabs-selected a, .tabs-bottom .ui-tabs-nav a:hover, .tabs-bottom .ui-tabs-nav a:focus, .tabs-bottom .ui-tabs-nav a:active  {
+    top: -1px !important; background-position: 100% -29px;}
+
+.tabs-bottom .ui-tabs-nav a span {line-height: 23px;}
+
+.tabs-bottom .ui-tabs-nav .ui-tabs-selected a span, .tabs-bottom .ui-tabs-nav a:hover span, .tabs-bottom .ui-tabs-nav a:focus span, .tabs-bottom .ui-tabs-nav a:active span  {
+    line-height: 28px; background-position:0pt -29px;}
+
+
+/* TABS BOTTOM RED ON GRAY */
+
+.tabs-red-on-gray .ui-tabs-nav a, .tabs-red-on-gray .ui-tabs-nav a span {background: url(i/tabs-bot-red-on-gray.gif) no-repeat;}
+.tabs-red-on-gray .ui-tabs-nav a {background-position: 100% 0;}
+.tabs-red-on-gray .ui-tabs-panel{border-bottom: 1px solid #da7e7f;}
+
+/* TABS BOTTOM GRAY ON WHITE */
+
+.tabs-gray-on-white .ui-tabs-nav a, .tabs-gray-on-white .ui-tabs-nav a span {background: url(i/tabs-bottom-gray.gif) no-repeat;}
+.tabs-gray-on-white .ui-tabs-nav a {background-position: 100% 0;}
+.tabs-gray-on-white .ui-tabs-panel{border-bottom: 1px solid #d0d0d0;}
+
+
+/* TABS BOTTOM RED ON WHITE*/
+
+.tabs-red-on-white .ui-tabs-nav a, .tabs-red-on-white .ui-tabs-nav a span {background: url(i/tabs-bot-red-on-white.gif) no-repeat;}
+.tabs-red-on-white .ui-tabs-nav a {background-position: 100% 0;}
+.tabs-red-on-white .ui-tabs-panel {border-bottom: 1px solid #da7e7f;}
+
+/* Additional IE specific bug fixes... */
+* html .ui-tabs-nav { /* auto clear @ IE 6 & IE 7 Quirks Mode */
+    display: inline-block;
+}
+*:first-child+html .ui-tabs-nav  { /* auto clear @ IE 7 Standards Mode - do not group selectors, otherwise IE 6 will ignore complete rule (because of the unknown + combinator)... */
+    display: inline-block;
+}

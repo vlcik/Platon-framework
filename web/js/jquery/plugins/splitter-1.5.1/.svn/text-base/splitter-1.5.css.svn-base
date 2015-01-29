@@ -1,0 +1,25 @@
+#splitter {
+	position: relative;
+	
+	width: 100%;
+	
+	border-color: #777777 -moz-use-text-color #777777 -moz-use-text-color ;
+	border-style: solid none none none;
+	border-width: 3px 0 0 0;
+}
+
+#LeftPane {
+	overflow: auto;
+}
+
+#RightPane{
+	overflow: auto;
+}
+
+#splitter .vsplitbar {
+	width: 3px;
+	background: #777777 url(img/vgrabber.gif) no-repeat center;
+}
+#splitter .vsplitbar.active {
+	background: #da8 url(img/vgrabber.gif) no-repeat center;
+	opacity: 0.7;
